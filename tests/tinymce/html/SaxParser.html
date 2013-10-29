@@ -355,7 +355,7 @@ test('Parse text', function() {
 });
 
 test('Parsing comments', function() {
-	expect(8);
+	expect(12);
 
 	var counter = createCounter(writer);
 	var parser = new tinymce.html.SaxParser(counter, schema);
@@ -370,6 +370,22 @@ test('Parsing comments', function() {
 	parser.parse('<!---->');
 	equal(writer.getContent(), '', 'Parse comment without value.');
 	deepEqual(counter.counts, {}, 'Parse comment without value count.');
+
+	// "<!--->" is parsed as a comment without value by the browser.
+	var counter = createCounter(writer);
+	var parser = new tinymce.html.SaxParser(counter, schema);
+	writer.reset();
+	parser.parse('<!--->');
+	equal(writer.getContent(), '', 'Parse "<!--->" as a comment without value.');
+	deepEqual(counter.counts, {}, 'Parse "<!--->" as a comment without value count.');
+
+	// "<!-->" is parsed as a comment without value by the browser.
+	var counter = createCounter(writer);
+	var parser = new tinymce.html.SaxParser(counter, schema);
+	writer.reset();
+	parser.parse('<!-->');
+	equal(writer.getContent(), '', 'Parse "<!-->" as a comment without value.');
+	deepEqual(counter.counts, {}, 'Parse "<!-->" as a comment without value count.');
 
 	var counter = createCounter(writer);
 	var parser = new tinymce.html.SaxParser(counter, schema);

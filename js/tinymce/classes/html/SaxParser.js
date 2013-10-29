@@ -176,7 +176,7 @@ define("tinymce/html/SaxParser", [
 
 			// Precompile RegExps and map objects
 			tokenRegExp = new RegExp('<(?:' +
-				'(?:!--([\\w\\W]*?)-->)|' + // Comment
+				'(?:!---?>|!--([\\w\\W]*?)-->)|' + // Comment
 				'(?:!\\[CDATA\\[([\\w\\W]*?)\\]\\]>)|' + // CDATA
 				'(?:!DOCTYPE([\\w\\W]*?)>)|' + // DOCTYPE
 				'(?:\\?([^\\s\\/<>]+) ?([\\w\\W]*?)[?/]>)|' + // PI
