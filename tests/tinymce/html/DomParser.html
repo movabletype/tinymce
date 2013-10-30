@@ -280,6 +280,32 @@ test('addAttributeFilter multiple', function() {
 	equal(results['href'].nodes[1].attr('href'), '2.gif', 'Parser filter result node(1) attr');
 });
 
+test('addAttributeFilter RegExp', function() {
+	var parser, results = {};
+
+	expect(12);
+
+	parser = new tinymce.html.DomParser({});
+	parser.addAttributeFilter(/id|method/, function(nodes, name, args) {
+		results[name] = {nodes : nodes, name : name, args : args};
+	});
+
+	parser.parse('<form id="form" method="post"/><input type="submit" id="input"/></form>');
+
+	deepEqual(results['id'].args, {}, 'Parser args');
+	equal(results['id'].name, 'id', 'Parser filter result name');
+	equal(results['id'].nodes.length, 2, 'Parser filter result node');
+	equal(results['id'].nodes[0].name, 'form', 'Parser filter result node(0) name');
+	equal(results['id'].nodes[0].attr('id'), 'form', 'Parser filter result node(0) attr');
+	equal(results['id'].nodes[1].name, 'input', 'Parser filter result node(0) name');
+	equal(results['id'].nodes[1].attr('id'), 'input', 'Parser filter result node(1) attr');
+	deepEqual(results['method'].args, {}, 'Parser args');
+	equal(results['method'].name, 'method', 'Parser filter result name');
+	equal(results['method'].nodes.length, 1, 'Parser filter result node');
+	equal(results['method'].nodes[0].name, 'form', 'Parser filter result node(0) name');
+	equal(results['method'].nodes[0].attr('method'), 'post', 'Parser filter result node(0) attr');
+});
+
 test('Fix orphan LI elements', function() {
 	var parser, result;
 

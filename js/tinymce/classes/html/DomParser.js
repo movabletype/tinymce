@@ -242,7 +242,7 @@ define("tinymce/html/DomParser", [
 		 * @param {function} callback Callback function to execute once it has collected nodes.
 		 */
 		self.addAttributeFilter = function(name, callback) {
-			each(explode(name), function(name) {
+			each(name instanceof RegExp ? [name] : explode(name), function(name) {
 				var i;
 
 				for (i = 0; i < attributeFilters.length; i++) {
@@ -267,7 +267,7 @@ define("tinymce/html/DomParser", [
 		 * @return {tinymce.html.Node} Root node containing the tree.
 		 */
 		self.parse = function(html, args) {
-			var parser, rootNode, node, nodes, i, l, fi, fl, list, name, validate;
+			var parser, rootNode, node, nodes, i, l, fi, fl, list, name, validate, tempList;
 			var blockElements, startWhiteSpaceRegExp, invalidChildren = [], isInWhiteSpacePreservedElement;
 			var endWhiteSpaceRegExp, allWhiteSpaceRegExp, isAllWhiteSpaceRegExp, whiteSpaceElements;
 			var children, nonEmptyElements, rootBlockName;
@@ -433,6 +433,17 @@ define("tinymce/html/DomParser", [
 				start: function(name, attrs, empty) {
 					var newNode, attrFiltersLen, elementRule, attrName, parent;
 
+					function addNodeToMatchedAttributes(name, node) {
+						var list = matchedAttributes[name];
+						if (list) {
+							if (list[list.length-1] !== node) {
+								list.push(node);
+							}
+						} else {
+							matchedAttributes[name] = [newNode];
+						}
+					}
+
 					elementRule = validate ? schema.getElementRule(name) : {};
 					if (elementRule) {
 						newNode = createNode(elementRule.outputName || name, 1);
@@ -452,13 +463,16 @@ define("tinymce/html/DomParser", [
 						while (attrFiltersLen--) {
 							attrName = attributeFilters[attrFiltersLen].name;
 
-							if (attrName in attrs.map) {
-								list = matchedAttributes[attrName];
-
-								if (list) {
-									list.push(newNode);
-								} else {
-									matchedAttributes[attrName] = [newNode];
+							if (attrName instanceof RegExp) {
+								for (name in attrs.map) {
+									if (attrName.test(name)) {
+										addNodeToMatchedAttributes(name, newNode);
+									}
+								}
+							}
+							else {
+								if (attrName in attrs.map) {
+									addNodeToMatchedAttributes(attrName, newNode);
 								}
 							}
 						}
@@ -628,19 +642,46 @@ define("tinymce/html/DomParser", [
 				for (i = 0, l = attributeFilters.length; i < l; i++) {
 					list = attributeFilters[i];
 
-					if (list.name in matchedAttributes) {
-						nodes = matchedAttributes[list.name];
+					if (list.name instanceof RegExp) {
+						for (name in matchedAttributes) {
+							if (! list.name.test(name)) {
+								continue;
+							}
 
-						// Remove already removed children
-						fi = nodes.length;
-						while (fi--) {
-							if (!nodes[fi].parent) {
-								nodes.splice(fi, 1);
+							tempList = extend({}, list, {
+								name: name
+							});
+
+							nodes = matchedAttributes[name];
+
+							// Remove already removed children
+							fi = nodes.length;
+							while (fi--) {
+								if (!nodes[fi].parent) {
+									nodes.splice(fi, 1);
+								}
+							}
+
+							for (fi = 0, fl = tempList.callbacks.length; fi < fl; fi++) {
+								tempList.callbacks[fi](nodes, tempList.name, args);
 							}
 						}
+					}
+					else {
+						if (list.name in matchedAttributes) {
+							nodes = matchedAttributes[list.name];
 
-						for (fi = 0, fl = list.callbacks.length; fi < fl; fi++) {
-							list.callbacks[fi](nodes, list.name, args);
+							// Remove already removed children
+							fi = nodes.length;
+							while (fi--) {
+								if (!nodes[fi].parent) {
+									nodes.splice(fi, 1);
+								}
+							}
+
+							for (fi = 0, fl = list.callbacks.length; fi < fl; fi++) {
+								list.callbacks[fi](nodes, list.name, args);
+							}
 						}
 					}
 				}
