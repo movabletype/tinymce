@@ -1,26 +1,87 @@
 /* Content.less */
 
-@font-family: Verdana, Arial, Helvetica, sans-serif;
-@font-size: 11px;
-
-body {
-	background-color: #FFFFFF;
-	color: #000000;
-	font-family: @font-family;
-	font-size: @font-size;
-	scrollbar-3dlight-color: #F0F0EE;
-	scrollbar-arrow-color: #676662;
-	scrollbar-base-color: #F0F0EE;
-	scrollbar-darkshadow-color: #DDDDDD;
-	scrollbar-face-color: #E0E0DD;
-	scrollbar-highlight-color: #F0F0EE;
-	scrollbar-shadow-color: #F0F0EE;
-	scrollbar-track-color: #F5F5F5;
+html {
+	padding: 10px;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
-td, th {
-	font-family: @font-family;
-	font-size: @font-size;
+body {
+	margin: 0;
+	line-height: 1.62;
+	background-color: #ffffff;
+	color: #000000;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+body.mceForceColors {
+	background: #ffffff;
+	color: #000000;
+}
+
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+nav, 
+section, 
+summary {
+	display: block;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+h2 {
+	font-size: 1.5em;
+	margin: 0.83em 0;
+}
+h3 {
+	font-size: 1.17em;
+	margin: 1em 0;
+}
+h4 {
+	font-size: 1em;
+	margin: 1.33em 0;
+}
+h5 {
+	font-size: 0.83em;
+	margin: 1.67em 0;
+}
+h6 {
+	font-size: 0.75em;
+	margin: 2.33em 0;
+}
+
+pre {
+	margin: 1em 0;
+	font-family: monospace;
+}
+
+img {
+	border:0;
+	-ms-interpolation-mode: bicubic;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+table {
+	cursor: default;
+}
+table td, 
+table th {
+	cursor: text;
 }
 
 @import "Content.Objects.less";
