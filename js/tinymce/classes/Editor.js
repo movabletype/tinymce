@@ -521,9 +521,6 @@ define("tinymce/Editor", [
 			// Create all plugins
 			each(settings.plugins.replace(/\-/g, '').split(/[ ,]/), initPlugin);
 
-			// Enables users to override the control factory
-			self.fire('BeforeRenderUI');
-
 			// Measure box
 			if (settings.render_ui && self.theme) {
 				self.orgDisplay = elm.style.display;
@@ -1708,6 +1705,7 @@ define("tinymce/Editor", [
 
 				// Check if forcedRootBlock is configured and that the block is a valid child of the body
 				if (forcedRootBlockName && self.schema.isValidChild(body.nodeName.toLowerCase(), forcedRootBlockName.toLowerCase())) {
+					// Padd with bogus BR elements on modern browsers and IE 7 and 8 since they don't render empty P tags properly
 					content = ie && ie < 11 ? '' : '<br data-mce-bogus="1">';
 					content = self.dom.createHTML(forcedRootBlockName, self.settings.forced_root_block_attrs, content);
 				} else if (!ie || ie < 11) {
