@@ -1018,7 +1018,8 @@ define("tinymce/Editor", [
 				if (!contentEditable) {
 					// WebKit needs this call to fire focusin event properly see #5948
 					// But Opera pre Blink engine will produce an empty selection so skip Opera
-					if (!Env.opera) {
+					// And IE8 will make an error for a hidden editor so skip IE8
+					if (!Env.opera && (Env.ie && Env.ie >= 9)) {
 						self.getBody().focus();
 					}
 
