@@ -81,7 +81,7 @@ define("tinymce/tableplugin/CellSelection", [
 			}
 		});
 
-		dom.bind(editor.getDoc(), 'mouseover', cellSelectionHandler);
+		editor.on('mouseover', cellSelectionHandler);
 
 		editor.on('remove', function() {
 			dom.unbind(editor.getDoc(), 'mouseover', cellSelectionHandler);
@@ -156,8 +156,9 @@ define("tinymce/tableplugin/CellSelection", [
 			}
 		});
 
-		editor.on('KeyUp', function() {
+		editor.on('KeyUp Drop', function() {
 			clear();
+			startCell = tableGrid = startTable = null;
 		});
 
 		return {
