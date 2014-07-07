@@ -24,98 +24,102 @@
 
 @iconSize: 16px;
 
-.mce-ico {
+.@{prefix}-ico {
 	font-family: 'tinymce', Arial;
 	font-style: normal;
 	font-weight: normal;
+	font-variant: normal;
 	font-size: @iconSize;
 	line-height: 16px;
+	speak: none;
 	vertical-align: text-top;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	display: inline-block;
 	background: transparent center center;
+	background-size: cover;
 	width: 22px;
 	height: 22px;
 	color: @btn-text;
 }
 
-.mce-btn-small .mce-ico {
+.@{prefix}-btn-small .@{prefix}-ico {
 	font-family: 'tinymce-small', Arial;
-    text-indent: 3px;
+	text-indent: 3px;
 }
 
-.mce-i-save:before           { content: "\e000"; }
-.mce-i-newdocument:before    { content: "\e001"; }
-.mce-i-fullpage:before       { content: "\e002"; }
-.mce-i-alignjustify:before   { content: "\e006"; }
-.mce-i-cut:before            { content: "\e007"; }
-.mce-i-paste:before          { content: "\e008"; }
-.mce-i-searchreplace:before  { content: "\e009"; }
-.mce-i-anchor:before         { content: "\e013"; }
-.mce-i-image:before          { content: "\e014"; }
-.mce-i-media:before          { content: "\e015"; }
-.mce-i-help:before           { content: "\e016"; }
-.mce-i-code:before           { content: "\e017"; }
-.mce-i-inserttime:before     { content: "\e018"; }
-.mce-i-preview:before        { content: "\e019"; }
-.mce-i-table:before          { content: "\e01b"; }
-.mce-i-subscript:before      { content: "\e01e"; }
-.mce-i-superscript:before    { content: "\e01f"; }
-.mce-i-charmap:before        { content: "\e020"; }
-.mce-i-emoticons:before      { content: "\e021"; }
-.mce-i-print:before          { content: "\e022"; }
-.mce-i-fullscreen:before     { content: "\e023"; }
-.mce-i-spellchecker:before   { content: "\e024"; }
-.mce-i-nonbreaking:before    { content: "\e025"; }
-.mce-i-pagebreak:before      { content: "\e027"; }
-.mce-i-restoredraft:before   { content: "\e028"; }
-.mce-i-untitled:before       { content: "\e029"; }
-.mce-i-visualchars:before    { content: "\e02e"; }
-.mce-i-visualblocks:before   { content: "\e02e"; }
-.mce-i-ltr:before            { content: "\e02f"; }
-.mce-i-rtl:before            { content: "\e030"; }
-.mce-i-copy:before           { content: "\e031"; }
-.mce-i-browse:before         { content: "\e034"; }
-.mce-i-pastetext:before      { content: "\e035"; }
-.mce-i-resize:before         { content: "\e032"; }
+.@{prefix}-i-save:before           { content: "\e000"; }
+.@{prefix}-i-newdocument:before    { content: "\e001"; }
+.@{prefix}-i-fullpage:before       { content: "\e002"; }
+.@{prefix}-i-alignjustify:before   { content: "\e006"; }
+.@{prefix}-i-cut:before            { content: "\e007"; }
+.@{prefix}-i-paste:before          { content: "\e008"; }
+.@{prefix}-i-searchreplace:before  { content: "\e009"; }
+.@{prefix}-i-anchor:before         { content: "\e013"; }
+.@{prefix}-i-image:before          { content: "\e014"; }
+.@{prefix}-i-media:before          { content: "\e015"; }
+.@{prefix}-i-help:before           { content: "\e016"; }
+.@{prefix}-i-code:before           { content: "\e017"; }
+.@{prefix}-i-insertdatetime:before { content: "\e018"; }
+.@{prefix}-i-preview:before        { content: "\e019"; }
+.@{prefix}-i-table:before          { content: "\e01b"; }
+.@{prefix}-i-subscript:before      { content: "\e01e"; }
+.@{prefix}-i-superscript:before    { content: "\e01f"; }
+.@{prefix}-i-charmap:before        { content: "\e020"; }
+.@{prefix}-i-emoticons:before      { content: "\e021"; }
+.@{prefix}-i-print:before          { content: "\e022"; }
+.@{prefix}-i-fullscreen:before     { content: "\e023"; }
+.@{prefix}-i-spellchecker:before   { content: "\e024"; }
+.@{prefix}-i-nonbreaking:before    { content: "\e025"; }
+.@{prefix}-i-pagebreak:before      { content: "\e027"; }
+.@{prefix}-i-restoredraft:before   { content: "\e028"; }
+.@{prefix}-i-untitled:before       { content: "\e029"; }
+.@{prefix}-i-visualchars:before    { content: "\e02e"; }
+.@{prefix}-i-visualblocks:before   { content: "\e02e"; }
+.@{prefix}-i-ltr:before            { content: "\e02f"; }
+.@{prefix}-i-rtl:before            { content: "\e030"; }
+.@{prefix}-i-copy:before           { content: "\e031"; }
+.@{prefix}-i-resize:before         { content: "\e032"; }
+.@{prefix}-i-browse:before         { content: "\e034"; }
+.@{prefix}-i-pastetext:before      { content: "\e035"; }
 
-.mce-i-checkbox:before, .mce-i-selected:before {
+.@{prefix}-i-checkbox:before, .@{prefix}-i-selected:before {
 	content: "\e033";
 }
 
-.mce-i-selected              { visibility: hidden; }
+.@{prefix}-i-selected              { visibility: hidden; }
 
 
 /* -- Movable Type */
 
-.mce-tinymce {
+.@{prefix}-tinymce {
     position: relative;
 }
 
-.mce-toolbar.mce-first.mce-stack-layout-item {
+.@{prefix}-toolbar.@{prefix}-first.@{prefix}-stack-layout-item {
     position: absolute;
     top: 2px;
     right: 2px;
 }
 
-.mce-i-mt_source_mode {
+.@{prefix}-i-mt_source_mode {
     background-position: -1250px 0;
 }
 
-.mce-btn-small button {
+.@{prefix}-btn-small button {
     padding: 0px;
 }
 
-.mce-btn.mce-menubtn.mce-listbox,
-.mce-btn.mce-btn-small {
+.@{prefix}-btn.@{prefix}-menubtn.@{prefix}-listbox,
+.@{prefix}-btn.@{prefix}-btn-small {
     box-sizing: border-box;
     border: 1px solid transparent;
     margin-right: 2px;
 }
 
-.mce-btn.mce-menubtn.mce-listbox:hover,
-.mce-btn.mce-btn-small:hover {
+.@{prefix}-btn.@{prefix}-menubtn.@{prefix}-listbox:hover,
+.@{prefix}-btn.@{prefix}-btn-small:hover {
     border-radius: 2px;
 
     border-color: #adadad;
@@ -128,9 +132,9 @@
 }
 
 /* -- Active */
-.mce-btn.mce-btn-small:active, 
-.mce-btn.mce-btn-small.mce-active,
-.mce-btn.mce-btn-small.psedo-active {
+.@{prefix}-btn.@{prefix}-btn-small:active, 
+.@{prefix}-btn.@{prefix}-btn-small.@{prefix}-active,
+.@{prefix}-btn.@{prefix}-btn-small.psedo-active {
     border-radius: 2px;
 
     border-color: #adadad;
@@ -143,7 +147,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdddd', endColorstr='#f3f3f3',GradientType=0 );
 }
 
-.mce-btn.mce-btn-small.mce-disabled {
+.@{prefix}-btn.@{prefix}-btn-small.@{prefix}-disabled {
     border-color: transparent;
     background-color: transparent;
     background-image: none;
@@ -151,60 +155,60 @@
     filter: none;
 }
 
-.mce-disabled .mce-ico {
+.@{prefix}-disabled .@{prefix}-ico {
     opacity: 0.3;
     -ms-filter: 'alpha(opacity=30)';
     filter: alpha(opacity=30);
 }
 
 
-.mce-mt-ico(@pos) {
+.-mce-mt-ico(@pos) {
     background: transparent url(img/icons.png) no-repeat @pos;
 }
 
-.mce-i-bold { .mce-mt-ico(0 0); }
-.mce-i-italic { .mce-mt-ico(-50px 0); }
-.mce-i-underline { .mce-mt-ico(-100px 0); }
-.mce-i-strikethrough { .mce-mt-ico(-150px 0); }
+.@{prefix}-i-bold { .-mce-mt-ico(0 0); }
+.@{prefix}-i-italic { .-mce-mt-ico(-50px 0); }
+.@{prefix}-i-underline { .-mce-mt-ico(-100px 0); }
+.@{prefix}-i-strikethrough { .-mce-mt-ico(-150px 0); }
 
-.mce-i-blockquote { .mce-mt-ico(-200px 0); }
-.mce-i-bullist { .mce-mt-ico(-250px 0); }
-.mce-i-numlist { .mce-mt-ico(-300px 0); }
-.mce-i-hr { .mce-mt-ico(-350px 0); }
+.@{prefix}-i-blockquote { .-mce-mt-ico(-200px 0); }
+.@{prefix}-i-bullist { .-mce-mt-ico(-250px 0); }
+.@{prefix}-i-numlist { .-mce-mt-ico(-300px 0); }
+.@{prefix}-i-hr { .-mce-mt-ico(-350px 0); }
 
-.mce-i-link { .mce-mt-ico(-400px 0); }
-.mce-i-mt_source_link { .mce-mt-ico(-400px 0); }
-.mce-i-unlink { .mce-mt-ico(-450px 0); }
+.@{prefix}-i-link { .-mce-mt-ico(-400px 0); }
+.@{prefix}-i-mt_source_link { .-mce-mt-ico(-400px 0); }
+.@{prefix}-i-unlink { .-mce-mt-ico(-450px 0); }
 
-.mce-i-mt_insert_html { .mce-mt-ico(-500px 0); }
-.mce-i-mt_insert_file { .mce-mt-ico(-1050px 0); }
-.mce-i-mt_insert_image { .mce-mt-ico(-1100px 0); }
+.@{prefix}-i-mt_insert_html { .-mce-mt-ico(-500px 0); }
+.@{prefix}-i-mt_insert_file { .-mce-mt-ico(-1050px 0); }
+.@{prefix}-i-mt_insert_image { .-mce-mt-ico(-1100px 0); }
 
-.mce-i-undo { .mce-mt-ico(-550px 0); }
-.mce-i-redo { .mce-mt-ico(-600px 0); }
+.@{prefix}-i-undo { .-mce-mt-ico(-550px 0); }
+.@{prefix}-i-redo { .-mce-mt-ico(-600px 0); }
 
-.mce-i-forecolor { .mce-mt-ico(-650px 0); }
-.mce-i-backcolor { .mce-mt-ico(-700px 0); }
-.mce-i-removeformat { .mce-mt-ico(-750px 0); }
+.@{prefix}-i-forecolor { .-mce-mt-ico(-650px 0); }
+.@{prefix}-i-backcolor { .-mce-mt-ico(-700px 0); }
+.@{prefix}-i-removeformat { .-mce-mt-ico(-750px 0); }
 
-.mce-i-alignleft { .mce-mt-ico(-800px 0); }
-.mce-i-aligncenter { .mce-mt-ico(-850px 0); }
-.mce-i-alignright { .mce-mt-ico(-900px 0); }
-.mce-i-indent { .mce-mt-ico(-950px 0); }
-.mce-i-outdent { .mce-mt-ico(-1000px 0); }
+.@{prefix}-i-alignleft { .-mce-mt-ico(-800px 0); }
+.@{prefix}-i-aligncenter { .-mce-mt-ico(-850px 0); }
+.@{prefix}-i-alignright { .-mce-mt-ico(-900px 0); }
+.@{prefix}-i-indent { .-mce-mt-ico(-950px 0); }
+.@{prefix}-i-outdent { .-mce-mt-ico(-1000px 0); }
 
-.mce-i-mt_fullscreen { .mce-mt-ico(-1150px 0); }
-.fullscreen_editor .mce-i-mt_fullscreen { .mce-mt-ico(-1200px 0); }
+.@{prefix}-i-mt_fullscreen { .-mce-mt-ico(-1150px 0); }
+.fullscreen_editor .@{prefix}-i-mt_fullscreen { .-mce-mt-ico(-1200px 0); }
 
-.mce-i-mt_source_mode { .mce-mt-ico(-1250px 0); }
+.@{prefix}-i-mt_source_mode { .-mce-mt-ico(-1250px 0); }
 
-.mce-listbox.mce-menubtn.mce-btn-small span {
+.@{prefix}-listbox.@{prefix}-menubtn.@{prefix}-btn-small span {
     padding-left: 4px;
     font-weight: bold;
     line-height: 22px;
 }
 
-.mce-widget.mce-btn.mce-btn-small button.mce-mt-textbutton {
+.@{prefix}-widget.@{prefix}-btn.@{prefix}-btn-small button.@{prefix}-mt-textbutton {
     min-width: 25px;
     padding: 0 4px;
     line-height: 22px;
@@ -213,7 +217,7 @@
 }
 
 /* - Separator */
-.mce-mt-separator {
+.@{prefix}-mt-separator {
     display: inline-block;
     width: 1px;
     height: 22px;

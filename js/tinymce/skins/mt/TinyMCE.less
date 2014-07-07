@@ -1,71 +1,71 @@
-.mce-tinymce {
+.@{prefix}-tinymce {
 	// Avoid FOUC
-	visibility: visible !important;
+	visibility: inherit !important;
 	position: relative;
 	border-width: 0 !important;
 }
 
-.mce-tinymce > .mce-container-body > .mce-container {
+.@{prefix}-tinymce > .@{prefix}-container-body > .@{prefix}-container {
 	border-width: 1px 1px 0;
 }
 
-.mce-tinymce > .mce-container-body > .mce-container > .mce-container-body {
+.@{prefix}-tinymce > .@{prefix}-container-body > .@{prefix}-container > .@{prefix}-container-body {
 	padding: 1px 2px 2px;
 }
 
-.mce-fullscreen {
+.@{prefix}-fullscreen {
 	border: 0; padding: 0; margin: 0;
 	overflow: hidden;
 	height: 100%;
 	z-index: 100;
 }
 
-div.mce-fullscreen {
+div.@{prefix}-fullscreen {
 	position: fixed;
 	top: 0; left: 0;
 	width: 100%;
 	height: auto;
 }
 
-.mce-tinymce {
+.@{prefix}-tinymce {
 	display: block;
 	.border-radius(2px);
 	border-width: 0 !important;
 }
 
-.mce-wordcount {
+.@{prefix}-wordcount {
 	position: absolute;
 	top: 0;
 	right: 0;
 	padding: 8px;
 }
 
-div.mce-edit-area {
+div.@{prefix}-edit-area {
 	background: #FFF;
 	filter: none;
-	border-width: 0 !important;
+ 	border-width: 0 !important;
 }
 
-.mce-statusbar {
+.@{prefix}-statusbar {
 	position: relative;
-	border-width: 0 1px 1px !important;
+ 	border-width: 0 1px 1px !important;
 }
 
-.mce-statusbar .mce-container-body {
+.@{prefix}-statusbar .@{prefix}-container-body {
 	position: relative;
 }
 
-.mce-fullscreen .mce-resizehandle {
+.@{prefix}-fullscreen .@{prefix}-resizehandle {
 	display: none;
 }
 
 // Charmap
 
-.mce-charmap {
+.@{prefix}-charmap {
 	border-collapse: collapse;
 }
 
-.mce-charmap td {
+.@{prefix}-charmap td {
 	cursor: default;
 	border: 1px solid @panel-border;
 	width: 20px;
@@ -76,22 +76,30 @@ div.mce-edit-area {
 	padding: 2px;
 }
 
-.mce-charmap td div {
+.@{prefix}-charmap td div {
 	text-align: center;
 }
 
-.mce-charmap td:hover {
+.@{prefix}-charmap td:hover {
 	background: @btn-bg-hlight;
 }
 
-.mce-grid td div {
+.@{prefix}-grid td.@{prefix}-grid-cell div {
 	border: 1px solid @grid-border;
-	width: 12px; height: 12px;
-	margin: 2px;
+	width: 15px; height: 15px;
+	margin: 0px;
 	cursor: pointer;
+
+	&:focus {
+		border-color: @grid-border-active;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+	}
 }
 
-.mce-grid {
+.@{prefix}-grid {
 	border-spacing: 2px;
 	border-collapse: separate;
 
@@ -99,13 +107,13 @@ div.mce-edit-area {
 		display: block;
 		border: 1px solid transparent;
 
-		&:hover {
+		&:hover, &:focus {
 			border-color: @grid-border-active;
 		}
 	}
 }
 
-.mce-grid-border {
+.@{prefix}-grid-border {
 	margin: 0 4px 0 4px;
 
 	a {
@@ -113,31 +121,50 @@ div.mce-edit-area {
 		width: 13px; height: 13px;
 	}
 
-	a:hover, a.mce-active {
+	a:hover, a.@{prefix}-active {
 		border-color: @grid-border-active;
 		background: @grid-bg-active;
 	}
 }
 
-.mce-text-center {
+.@{prefix}-text-center {
 	text-align: center;
 }
 
-div.mce-tinymce-inline {
+div.@{prefix}-tinymce-inline {
 	width: 100%;
 	.box-shadow(none);
 }
 
+.@{prefix}-colorbtn-trans div {
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 16px;
+	color: mix(@text, #fff, 70%);
+}
+
+// Reduce double margins between toolbar rows
+
+.@{prefix}-toolbar-grp {
+	padding-bottom: 2px;
+}
+
+.@{prefix}-toolbar-grp .@{prefix}-flow-layout-item {
+	margin-bottom: 0;
+}
+
 // RTL
 
-.mce-rtl .mce-wordcount {
+.@{prefix}-rtl .@{prefix}-wordcount {
 	left: 0;
 	right: auto;
 }
 
 
 /* -- Movable Type */
-.mce-container .text {
+.@{prefix}-container .text {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 		 -o-box-sizing: border-box;
@@ -147,7 +174,7 @@ div.mce-tinymce-inline {
 	border-top-color: #323232;
 }
 
-.mce-window .mce-container textarea.text {
+.@{prefix}-window .@{prefix}-container textarea.text {
 	-webkit-box-sizing: content-box;
 	   -moz-box-sizing: content-box;
 		 -o-box-sizing: content-box;
@@ -155,23 +182,23 @@ div.mce-tinymce-inline {
 			box-sizing: content-box;
 }
 
-.mce-container .text:hover,
-.mce-container .text:focus {
+.@{prefix}-container .text:hover,
+.@{prefix}-container .text:focus {
 	box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
-.mce-container .text:hover {
+.@{prefix}-container .text:hover {
 	border-color: #a0a0a0;
 }
-.mce-container .text:focus {
+.@{prefix}-container .text:focus {
 	outline: 0;
 	border-color: #0076BF;
 }
 
-.mce-container iframe {
+.@{prefix}-container iframe {
 	border: 1px solid #adadad;
 }
 
-.mce-container .mce-edit-area {
+.@{prefix}-container .@{prefix}-edit-area {
     iframe {
 	    -webkit-box-sizing: border-box;
 	       -moz-box-sizing: border-box;
