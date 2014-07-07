@@ -2,10 +2,12 @@
 // Syntax: <control>-(<sub control>)-<bg|border|text>-(<state>)-(<extra>);
 // Example: @btn-primary-bg-hover-hlight;
 
+@prefix:                         mce;
+
 // Default font
 @font-family:                    "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-size:                      14px;
-@line-height:                    18px;
+@line-height:                    20px;
 @has-gradients:                  true;
 @has-radius:                     true;
 @has-boxshadow:                  true;
@@ -15,6 +17,7 @@
 @text-inverse:                   white;
 @text-disabled:                  #aaa;
 @text-shadow:                    0 1px 1px hsla(hue(@text-inverse), saturation(@text-inverse), lightness(@text-inverse), 0.75);
+@text-error:                     #aa0000;
 
 // Button
 @btn-text:                       @text;
@@ -65,8 +68,8 @@
 @menuitem-preview-border-active: #aaa;
 
 // Panel
-@panel-border:                   #C0C6C9;
-@panel-bg:                       #F3F3F3;
+@panel-border:                   #9E9E9E;
+@panel-bg:                       #FDFDFD;
 @panel-bg-hlight:                #DDD;
 
 // Tabs
@@ -81,15 +84,15 @@
 @tooltip-font-size:              11px;
 
 // Window
-@window-border:                  #FFF;
+@window-border:                  #c5c5c5;
 @window-head-border:             @window-border;
 @window-head-close:              mix(@text, @window-bg, 60%);
 @window-head-close-hover:        mix(@text, @window-bg, 40%);
 @window-foot-border:             @window-border;
 @window-foot-bg:                 @window-bg;
 @window-fullscreen-bg:           #FFF;
-@window-modalblock-bg:           #FFF;
-@window-modalblock-opacity:      0.7;
+@window-modalblock-bg:           #000;
+@window-modalblock-opacity:      0.3;
 @window-box-shadow:              0 3px 7px rgba(0, 0, 0, 0.3);
 @window-bg:                      #FFF;
 @window-title-font-size:         20px;
@@ -128,6 +131,11 @@
 
 // Combobox
 @combobox-border:                @textbox-border;
+
+// Colorpicker
+@colorpicker-border:             @textbox-border;
+@colorpicker-hue-bg:             #fff;
+@colorpicker-hue-border:         #333;
 
 // Grid
 @grid-bg-active:                 @menuitem-bg-active;

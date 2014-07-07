@@ -24,199 +24,89 @@
 
 @iconSize: 16px;
 
-.mce-ico {
+.@{prefix}-ico {
 	font-family: 'tinymce', Arial;
 	font-style: normal;
 	font-weight: normal;
+	font-variant: normal;
 	font-size: @iconSize;
 	line-height: 16px;
+	speak: none;
 	vertical-align: text-top;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	display: inline-block;
 	background: transparent center center;
-	width: 22px;
-	height: 22px;
+	background-size: cover;
+	width: 16px;
+	height: 16px;
 	color: @btn-text;
 }
 
-.mce-btn-small .mce-ico {
+.@{prefix}-btn-small .@{prefix}-ico {
 	font-family: 'tinymce-small', Arial;
-    text-indent: 3px;
 }
 
-.mce-i-save:before           { content: "\e000"; }
-.mce-i-newdocument:before    { content: "\e001"; }
-.mce-i-fullpage:before       { content: "\e002"; }
-.mce-i-alignjustify:before   { content: "\e006"; }
-.mce-i-cut:before            { content: "\e007"; }
-.mce-i-paste:before          { content: "\e008"; }
-.mce-i-searchreplace:before  { content: "\e009"; }
-.mce-i-anchor:before         { content: "\e013"; }
-.mce-i-image:before          { content: "\e014"; }
-.mce-i-media:before          { content: "\e015"; }
-.mce-i-help:before           { content: "\e016"; }
-.mce-i-code:before           { content: "\e017"; }
-.mce-i-inserttime:before     { content: "\e018"; }
-.mce-i-preview:before        { content: "\e019"; }
-.mce-i-table:before          { content: "\e01b"; }
-.mce-i-subscript:before      { content: "\e01e"; }
-.mce-i-superscript:before    { content: "\e01f"; }
-.mce-i-charmap:before        { content: "\e020"; }
-.mce-i-emoticons:before      { content: "\e021"; }
-.mce-i-print:before          { content: "\e022"; }
-.mce-i-fullscreen:before     { content: "\e023"; }
-.mce-i-spellchecker:before   { content: "\e024"; }
-.mce-i-nonbreaking:before    { content: "\e025"; }
-.mce-i-pagebreak:before      { content: "\e027"; }
-.mce-i-restoredraft:before   { content: "\e028"; }
-.mce-i-untitled:before       { content: "\e029"; }
-.mce-i-visualchars:before    { content: "\e02e"; }
-.mce-i-visualblocks:before   { content: "\e02e"; }
-.mce-i-ltr:before            { content: "\e02f"; }
-.mce-i-rtl:before            { content: "\e030"; }
-.mce-i-copy:before           { content: "\e031"; }
-.mce-i-browse:before         { content: "\e034"; }
-.mce-i-pastetext:before      { content: "\e035"; }
-.mce-i-resize:before         { content: "\e032"; }
+.@{prefix}-i-save:before           { content: "\e000"; }
+.@{prefix}-i-newdocument:before    { content: "\e001"; }
+.@{prefix}-i-fullpage:before       { content: "\e002"; }
+.@{prefix}-i-alignleft:before      { content: "\e003"; }
+.@{prefix}-i-aligncenter:before    { content: "\e004"; }
+.@{prefix}-i-alignright:before     { content: "\e005"; }
+.@{prefix}-i-alignjustify:before   { content: "\e006"; }
+.@{prefix}-i-cut:before            { content: "\e007"; }
+.@{prefix}-i-paste:before          { content: "\e008"; }
+.@{prefix}-i-searchreplace:before  { content: "\e009"; }
+.@{prefix}-i-bullist:before        { content: "\e00a"; }
+.@{prefix}-i-numlist:before        { content: "\e00b"; }
+.@{prefix}-i-indent:before         { content: "\e00c"; }
+.@{prefix}-i-outdent:before        { content: "\e00d"; }
+.@{prefix}-i-blockquote:before     { content: "\e00e"; }
+.@{prefix}-i-undo:before           { content: "\e00f"; }
+.@{prefix}-i-redo:before           { content: "\e010"; }
+.@{prefix}-i-link:before           { content: "\e011"; }
+.@{prefix}-i-unlink:before         { content: "\e012"; }
+.@{prefix}-i-anchor:before         { content: "\e013"; }
+.@{prefix}-i-image:before          { content: "\e014"; }
+.@{prefix}-i-media:before          { content: "\e015"; }
+.@{prefix}-i-help:before           { content: "\e016"; }
+.@{prefix}-i-code:before           { content: "\e017"; }
+.@{prefix}-i-insertdatetime:before { content: "\e018"; }
+.@{prefix}-i-preview:before        { content: "\e019"; }
+.@{prefix}-i-forecolor:before      { content: "\e01a"; }
+.@{prefix}-i-backcolor:before      { content: "\e01a"; }
+.@{prefix}-i-table:before          { content: "\e01b"; }
+.@{prefix}-i-hr:before             { content: "\e01c"; }
+.@{prefix}-i-removeformat:before   { content: "\e01d"; }
+.@{prefix}-i-subscript:before      { content: "\e01e"; }
+.@{prefix}-i-superscript:before    { content: "\e01f"; }
+.@{prefix}-i-charmap:before        { content: "\e020"; }
+.@{prefix}-i-emoticons:before      { content: "\e021"; }
+.@{prefix}-i-print:before          { content: "\e022"; }
+.@{prefix}-i-fullscreen:before     { content: "\e023"; }
+.@{prefix}-i-spellchecker:before   { content: "\e024"; }
+.@{prefix}-i-nonbreaking:before    { content: "\e025"; }
+.@{prefix}-i-template:before       { content: "\e026"; }
+.@{prefix}-i-pagebreak:before      { content: "\e027"; }
+.@{prefix}-i-restoredraft:before   { content: "\e028"; }
+.@{prefix}-i-untitled:before       { content: "\e029"; }
+.@{prefix}-i-bold:before           { content: "\e02a"; }
+.@{prefix}-i-italic:before         { content: "\e02b"; }
+.@{prefix}-i-underline:before      { content: "\e02c"; }
+.@{prefix}-i-strikethrough:before  { content: "\e02d"; }
+.@{prefix}-i-visualchars:before    { content: "\e02e"; }
+.@{prefix}-i-visualblocks:before   { content: "\e02e"; }
+.@{prefix}-i-ltr:before            { content: "\e02f"; }
+.@{prefix}-i-rtl:before            { content: "\e030"; }
+.@{prefix}-i-copy:before           { content: "\e031"; }
+.@{prefix}-i-resize:before         { content: "\e032"; }
+.@{prefix}-i-browse:before         { content: "\e034"; }
+.@{prefix}-i-pastetext:before      { content: "\e035"; }
 
-.mce-i-checkbox:before, .mce-i-selected:before {
+.@{prefix}-i-checkbox:before, .@{prefix}-i-selected:before {
 	content: "\e033";
 }
 
-.mce-i-selected              { visibility: hidden; }
-
-
-/* -- Movable Type */
-
-.mce-tinymce {
-    position: relative;
-}
-
-.mce-toolbar.mce-first.mce-stack-layout-item {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-}
-
-.mce-i-mt_source_mode {
-    background-position: -1250px 0;
-}
-
-.mce-btn-small button {
-    padding: 0px;
-}
-
-.mce-btn.mce-menubtn.mce-listbox,
-.mce-btn.mce-btn-small {
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    margin-right: 2px;
-}
-
-.mce-btn.mce-menubtn.mce-listbox:hover,
-.mce-btn.mce-btn-small:hover {
-    border-radius: 2px;
-
-    border-color: #adadad;
-    background-color: #f3f3f3;
-    background-image: -ms-linear-gradient(#f3f3f3, #dcdddd);
-    background-image: -moz-linear-gradient(#f3f3f3, #dcdddd);
-    background-image: -webkit-linear-gradient(#f3f3f3, #dcdddd);
-    background-image: linear-gradient(#f3f3f3, #dcdddd);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e9eaea',GradientType=0 );
-}
-
-/* -- Active */
-.mce-btn.mce-btn-small:active, 
-.mce-btn.mce-btn-small.mce-active,
-.mce-btn.mce-btn-small.psedo-active {
-    border-radius: 2px;
-
-    border-color: #adadad;
-    background-color: #dcdddd;
-    background-image: -ms-linear-gradient(#dcdddd, #f3f3f3);
-    background-image: -moz-linear-gradient(#dcdddd, #f3f3f3);
-    background-image: -webkit-linear-gradient(#dcdddd, #f3f3f3);
-    background-image: linear-gradient(#dcdddd, #f3f3f3);
-    box-shadow: 0px 1px 0 0 rgba(255, 255, 255, 0.9), inset 0 0 1px 0 rgba(0, 0, 0, 0.3);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdddd', endColorstr='#f3f3f3',GradientType=0 );
-}
-
-.mce-btn.mce-btn-small.mce-disabled {
-    border-color: transparent;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: none;
-    filter: none;
-}
-
-.mce-disabled .mce-ico {
-    opacity: 0.3;
-    -ms-filter: 'alpha(opacity=30)';
-    filter: alpha(opacity=30);
-}
-
-
-.mce-mt-ico(@pos) {
-    background: transparent url(img/icons.png) no-repeat @pos;
-}
-
-.mce-i-bold { .mce-mt-ico(0 0); }
-.mce-i-italic { .mce-mt-ico(-50px 0); }
-.mce-i-underline { .mce-mt-ico(-100px 0); }
-.mce-i-strikethrough { .mce-mt-ico(-150px 0); }
-
-.mce-i-blockquote { .mce-mt-ico(-200px 0); }
-.mce-i-bullist { .mce-mt-ico(-250px 0); }
-.mce-i-numlist { .mce-mt-ico(-300px 0); }
-.mce-i-hr { .mce-mt-ico(-350px 0); }
-
-.mce-i-link { .mce-mt-ico(-400px 0); }
-.mce-i-mt_source_link { .mce-mt-ico(-400px 0); }
-.mce-i-unlink { .mce-mt-ico(-450px 0); }
-
-.mce-i-mt_insert_html { .mce-mt-ico(-500px 0); }
-.mce-i-mt_insert_file { .mce-mt-ico(-1050px 0); }
-.mce-i-mt_insert_image { .mce-mt-ico(-1100px 0); }
-
-.mce-i-undo { .mce-mt-ico(-550px 0); }
-.mce-i-redo { .mce-mt-ico(-600px 0); }
-
-.mce-i-forecolor { .mce-mt-ico(-650px 0); }
-.mce-i-backcolor { .mce-mt-ico(-700px 0); }
-.mce-i-removeformat { .mce-mt-ico(-750px 0); }
-
-.mce-i-alignleft { .mce-mt-ico(-800px 0); }
-.mce-i-aligncenter { .mce-mt-ico(-850px 0); }
-.mce-i-alignright { .mce-mt-ico(-900px 0); }
-.mce-i-indent { .mce-mt-ico(-950px 0); }
-.mce-i-outdent { .mce-mt-ico(-1000px 0); }
-
-.mce-i-mt_fullscreen { .mce-mt-ico(-1150px 0); }
-.fullscreen_editor .mce-i-mt_fullscreen { .mce-mt-ico(-1200px 0); }
-
-.mce-i-mt_source_mode { .mce-mt-ico(-1250px 0); }
-
-.mce-listbox.mce-menubtn.mce-btn-small span {
-    padding-left: 4px;
-    font-weight: bold;
-    line-height: 22px;
-}
-
-.mce-widget.mce-btn.mce-btn-small button.mce-mt-textbutton {
-    min-width: 25px;
-    padding: 0 4px;
-    line-height: 22px;
-    font-family: monospace;
-    text-align: center;
-}
-
-/* - Separator */
-.mce-mt-separator {
-    display: inline-block;
-    width: 1px;
-    height: 22px;
-    margin: 3px 3px 0;
-    background: #c0c6c9;
-}
+.@{prefix}-i-selected              { visibility: hidden; }
+i.@{prefix}-i-backcolor            { text-shadow: none; background: @colorbtn-backcolor-bg; }
