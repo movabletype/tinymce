@@ -1,41 +1,14 @@
 // Button
 
 .@{prefix}-btn {
-	border: 1px solid mix(rgb(red(@btn-border-right), green(@btn-border-right), blue(@btn-border-right)), @panel-bg, 30%);
-	border-color: @btn-border-top @btn-border-right @btn-border-bottom @btn-border-left;
 	position: relative;
 	text-shadow: @text-shadow;
 
 	.inline-block();
-	.border-radius(3px);
-	.box-shadow(@btn-box-shadow);
-	.vertical-gradient(@btn-bg, @btn-bg-hlight);
-
-	&:hover, &:focus {
-		color: @btn-text;
-		.vertical-gradient(darken(@btn-bg, 5%), darken(@btn-bg-hlight, 5%));
-	}
-
-	&.@{prefix}-disabled button, &.@{prefix}-disabled:hover button {
-		cursor: default;
-		.box-shadow(none);
-		.opacity(@btn-box-disabled-opacity);
-	}
-
-	&.@{prefix}-active, &.@{prefix}-active:hover {
-		.vertical-gradient(darken(@btn-bg, 10%), darken(@btn-bg-hlight, 10%));
-		.box-shadow(@btn-box-shadow-active);
-	}
-
-	&:active {
-		.vertical-gradient(darken(@btn-bg, 10%), darken(@btn-bg-hlight, 10%));
-		.box-shadow(@btn-box-shadow-active);
-	}
 }
 
 .@{prefix}-btn button {
 	padding: 4px 10px;
-	font-size: @font-size;
 	line-height: @line-height;
 	*line-height: @line-height - 4px;
 	cursor: pointer;
@@ -95,9 +68,7 @@
 }
 
 .@{prefix}-btn-small button {
-	padding: 1px 5px;
-	font-size: @font-size - 2px;
-	*padding-bottom: 2px;
+ 	padding: 3px 5px;
 }
 
 .@{prefix}-btn-small i {
@@ -107,23 +78,18 @@
 }
 
 .@{prefix}-btn .@{prefix}-caret {
-	margin-top: 8px;
 	margin-left: 0;
 }
 
 .@{prefix}-btn-small .@{prefix}-caret {
-	margin-top: 8px;
 	margin-left: 0;
 }
 
 .@{prefix}-caret {
+ 	background: transparent url(img/small-grey-arrow-down.png) center no-repeat;
 	.inline-block();
-	width: 0; height: 0;
-	vertical-align: top;
-	border-top: 4px solid @btn-caret-border;
-	border-right: 4px solid transparent;
-	border-left: 4px solid transparent;
-	content: "";
+ 	width: 10px;
+ 	height: 22px;
 }
 
 .@{prefix}-disabled .@{prefix}-caret {
@@ -154,4 +120,77 @@
 
 .@{prefix}-rtl .@{prefix}-btn button {
 	direction: rtl;
+}
+
+
+/* -- Movable Type */
+.mce-window .mce-foot .mce-btn button {
+	cursor: pointer;
+	overflow: visible;
+	display: inline-block;
+	outline: none;
+	margin-right: 5px;
+	padding: 0 0.5em;
+	vertical-align: middle;
+	line-height: 1.75em;
+	white-space: nowrap;
+	border: 1px solid #666666;
+	background-color: #ffffff;
+	color: #1A1A1A;
+	font-size: 12px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.4);
+	border-radius: 3px;
+}
+
+.mce-window .mce-foot .mce-btn button {
+	color: #fffffc;
+	font-size: 14px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+	vertical-align: middle;
+	min-width: 80px;
+	padding: 0 0.8em;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.mce-window .mce-foot .mce-btn button {
+	border-color: #7b7c7d;
+	background-color: #666666;
+}
+.mce-window .mce-foot .mce-btn button:hover {
+	border-color: #323232;
+	background-color: #b2b2b2;
+}
+.mce-window .mce-foot .mce-btn button:active {
+	background-color: #999999;
+	background-image: -moz-linear-gradient(#999999, #8c8c8c);
+	background-image: -webkit-linear-gradient(#999999, #8c8c8c);
+	background-image: linear-gradient(#999999, #8c8c8c);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.4);
+}
+
+.mce-window .mce-menubtn span {
+	display: inline-block;
+	width: 100%;
+}
+
+.mce-window .mce-foot .mce-btn.mce-primary button {
+	border-color: #004B9A;
+	background-color: #0076BF;
+	background-image: -moz-linear-gradient(#0076BF, #006ea5);
+	background-image: -webkit-linear-gradient(#0076BF, #006ea5);
+	background-image: linear-gradient(#0076BF, #006ea5);
+}
+.mce-window .mce-foot .mce-btn.mce-primary button:hover {
+	border-color: #00437F;
+	background: #008FD6;
+}
+.mce-window .mce-foot .mce-btn.mce-primary button:active {
+	background-color: #006DA3;
+	background-image: -moz-linear-gradient(#005B88, #006DA3);
+	background-image: -webkit-linear-gradient(#005B88, #006DA3);
+	background-image: linear-gradient(#005B88, #006DA3);
 }
